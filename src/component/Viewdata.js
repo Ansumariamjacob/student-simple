@@ -1,4 +1,5 @@
 import React from 'react'
+import Navbar from './Navbar'
 
 const Viewdata = () => {
     var studlist=[{
@@ -7,18 +8,18 @@ const Viewdata = () => {
         "cgpa":"60"},
         {
             "name":"Appu",
-            "Admno":"103",
+            "admno":"103",
             "cgpa":"90"},
             {
                 "name":"Ammu",
-                "Admno":"910",
+                "admno":"910",
                 "cgpa":"89"
         }
     ]
     
   return (
-    <div>
-        <table class="table table-dark table-striped">
+    <div><Navbar/>
+        <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">Addmission Number</th>
@@ -27,17 +28,18 @@ const Viewdata = () => {
       
     </tr>
   </thead>
+  <tbody>
   {studlist.map((value,key)=>{
-      return  <tbody>
-      <tr>
+      return <tr>
         <th scope="row">{value.admno}</th>
         <td>{value.name}</td>
         <td>{value.cgpa}</td>
         
       </tr>
-    </tbody>
+    
   })
   }
+  </tbody>
 
 </table>
     </div>
