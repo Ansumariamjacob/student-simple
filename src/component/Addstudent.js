@@ -6,7 +6,7 @@ const Addstudent = () => {
     var [admno,setAdmno]=useState("");
     var [cgpa,setCgpa]=useState("")
     const subData=()=>{
-        const data={"Name":name,"admno":admno,"cgpa":cgpa}
+        const data={"name":name,"admno":admno,"cgpa":cgpa}
         console.log(data)
     }
   return (

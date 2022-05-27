@@ -1,21 +1,13 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useState } from 'react'
 import Navbar from './Navbar'
 
 const Viewdata = () => {
-    var studlist=[{
-        "name":"ansu",
-        "admno":"102",
-        "cgpa":"60"},
-        {
-            "name":"Appu",
-            "admno":"103",
-            "cgpa":"90"},
-            {
-                "name":"Ammu",
-                "admno":"910",
-                "cgpa":"89"
-        }
-    ]
+    var [studlist,setStudlist]=useState([])
+   axios.get("http://localhost:4000/api/viewall").then ((response)=>{
+       console.log(response.data)
+       setStudlist(response.data)
+})
     
   return (
     <div><Navbar/>
